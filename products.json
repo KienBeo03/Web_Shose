@@ -6,7 +6,7 @@
         "image": ["images/anh20.jpg"],
         "price": 799000,
         "rating": 5,
-        "category": "Sản Phẩm Mới Về",
+        "category": "San Pham Moi Ve",
         "detailsPage": "sproduct.html"
     },
     {
@@ -23,7 +23,7 @@
         ],
         "price": 799000,
         "rating": 5,
-        "category": "Sản Phẩm Mới Về",
+        "category": "San Pham Moi Ve",
         "detailsPage": ""
     },
     {
@@ -38,7 +38,7 @@
         ],
         "price": 799000,
         "rating": 5,
-        "category": "Sản Phẩm Mới Về",
+        "category": "San Pham Moi Ve",
         "detailsPage": ""
     },
     {
@@ -48,7 +48,7 @@
         "image": ["images/anh2.jpg"],
         "price": 700000,
         "rating": 5,
-        "category": "Sản Phẩm Hot",
+        "category": "San Pham Hot",
         "detailsPage": ""
     },
     {
@@ -58,7 +58,7 @@
         "image": ["images/nikejd4-hinh4.jpg"],
         "price": 799000,
         "rating": 5,
-        "category": "Sản Phẩm Hot",
+        "category": "San Pham Hot",
         "detailsPage": "sproduct1.html"
     },
     {
@@ -68,7 +68,7 @@
         "image": ["images/anh4.jpeg"],
         "price": 650000,
         "rating": 5,
-        "category": "Sản Phẩm Mới Về",
+        "category": "San Pham Moi Ve",
         "detailsPage": "sproduct2.html"
     },
     {
@@ -78,7 +78,7 @@
         "image": ["images/anh5.jpg"],
         "price": 690000,
         "rating": 5,
-        "category": "Sản Phẩm Mới Về",
+        "category": "San Pham Moi Ve",
         "detailsPage": "sproduct3.html"
     },
     {
@@ -88,7 +88,7 @@
         "image": ["images/anh6.jpg"],
         "price": 799000,
         "rating": 2,
-        "category": "Sản Phẩm Hot",
+        "category": "San Pham Hot",
         "detailsPage": ""
     }
 ]

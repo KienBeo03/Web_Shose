@@ -1,40 +1,41 @@
-// Hàm để tải JSON và hiển thị sản phẩm dựa trên tiêu đề
 async function loadProducts() {
     try {
+        // Tải dữ liệu JSON
         const response = await fetch('products.json');
         const products = await response.json();
 
-        const productContainer = document.querySelector('.pro-container');
-        const categoryTitle = document.querySelector('.category-title').textContent.trim();
+        // Lấy các container cần hiển thị sản phẩm
+        const productContainers = document.querySelectorAll('.pro-container');
+        const categoryTitles = document.querySelectorAll('.category-title');
 
-        // Xác định danh mục dựa trên tiêu đề
-        let filteredProducts = [];
-        if (categoryTitle === 'Sản Phẩm Nổi Bật') {
-            filteredProducts = products.filter(product => 
-                product.category === 'Sản Phẩm Mới Về' || product.category === 'Sản Phẩm Hot'
-            );
-        } else if (categoryTitle === 'Sản Phẩm Mới Về') {
-            filteredProducts = products.filter(product => product.category === 'Sản Phẩm Mới Về');
-        } else if (categoryTitle === 'Sản Phẩm Hot') {
-            filteredProducts = products.filter(product => product.category === 'Sản Phẩm Hot');
-        }
+        // Lặp qua từng tiêu đề danh mục
+        categoryTitles.forEach((title, index) => {
+            let filteredProducts = [];
+            // Lọc sản phẩm dựa trên tiêu đề
+            if (title.innerText === 'Sản Phẩm Nổi Bật') {
+                filteredProducts = products.filter(product => product.category === 'San Pham Hot');
+            } else if (title.innerText === 'Sản Phẩm Mới Về') {
+                filteredProducts = products.filter(product => product.category === 'San Pham Moi Ve');
+            }
 
-        // Hiển thị sản phẩm đã lọc
-        filteredProducts.forEach(product => {
-            const productHTML = `
-            <div class="pro">
-                <img src="${product.image[0]}" alt="${product.name}">
-                <div class="des">
-                    <span>${product.brand}</span>
-                    <h5>${product.name}</h5>
-                    <div class="star">
-                        ${'<i class="fas fa-star"></i>'.repeat(product.rating)}
+            // Hiển thị sản phẩm trong container tương ứng
+            const container = productContainers[index];
+            filteredProducts.forEach(product => {
+                const productHTML = `
+                <div class="pro">
+                    <img src="${product.image[0]}" alt="${product.name}">
+                    <div class="des">
+                        <span>${product.brand}</span>
+                        <h5>${product.name}</h5>
+                        <div class="star">
+                            ${'<i class="fas fa-star"></i>'.repeat(product.rating)}
+                        </div>
+                        <h4>${product.price}đ</h4>
                     </div>
-                    <h4>${product.price}đ</h4>
-                </div>
-                <a href="${product.detailsPage}"><i class="fa-solid fa-cart-shopping cart"></i></a>
-            </div>`;
-            productContainer.innerHTML += productHTML;
+                    <a href="${product.detailsPage}"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                </div>`;
+                container.innerHTML += productHTML;
+            });
         });
     } catch (error) {
         console.error('Lỗi khi tải sản phẩm:', error);
