@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="sign-up">
+     <h1 class="sign-up-heading">Đăng nhập</h1>
+     <!--Đăng nhập bằng mạng xã hội-->
+     <button class="sign-up-social">
+        <i class="fa-brands fa-google sign-up-social-icon"></i>
+        <span class="sign-up-social-text">Đăng nhập bằng Google</span>
+     </button>
+     <div class="signup-or">
+         <span>Hoặc</span>
+     </div>
+    <div   class="signup-form" >
+        <label for="TaiKhoan" class="signup-label">Tài Khoản</label>
+        <input type="text" id="TaiKhoan" class="signup-input" placeholder="Nhập tài khoản">
+   
+        <label for="MatKhau" class="signup-label">Mật Khẩu</label>
+        <input type="password" id="MatKhau" class="signup-input" placeholder="Nhập mật khẩu">        
+        <button class="signup-submit" onclick="login()"> Đăng nhập</button>
+    </div>
+     <p class="signup-already">
+         <span>Bạn dã có tài khoản chưa?</span>
+         <a href="DangKy.html" class="signup-login-link">Đăng kí</a>
+     </p>
+
+     <p class="Comback-Home">
+        <i class="fa-solid fa-house"></i>
+         <a href="index.html">Trở lại trang chủ</a>
+     </p>
+
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

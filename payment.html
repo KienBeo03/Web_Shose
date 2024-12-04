@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="icon" href="./IMG/icon.png">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="payment.css">
+  
+</head>
+<body>
+    <section id="header">
+      
+        <a href="index.html"><img src="images/logo.png" alt="" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                
+                <li><a class="active" href="index.html">Trang Chủ</a></li>
+                <li><a href="shop.html">Cửa Hàng</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="about.html">Thông tin</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="testgiohang.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a></li>
+            </ul>
+        </div>
+          
+    </section>
+
+    <div class="wrapper ">
+        <div class="info">
+            <!-- <p class="user-test"><a href="testgiohang.html"> Giỏ hàng </a></p> -->
+            <p class="info-text">THÔNG TIN GIAO HÀNG</p>
+            <p class="user-test">Bạn đã có tài khoản chưa? <a href="login.html">Đăng nhập</a></p>
+            <form action="" class="info-deli">
+                <input type="text" class="input-name" placeholder="Họ và tên">
+                <div class="info-contact">
+                    <input type="email" class="input-email" placeholder="Email">
+                    <input type="text" class="input-phone" placeholder="Số điện thoại">
+                </div>
+                <input type="text" class="input-address" placeholder="Địa chỉ">
+                <div class="address">
+                    <select class="slt-city" name="select-city" id="select-city">
+                        <option value="null" selected>Chọn tỉnh / thành</option>
+                        <option value="">Hà Nội</option>
+                        <option value="">Hưng Yên</option>
+                        <option value="">Hồ Chí Minh</option>
+                        <option value="">Hải phòng</option>
+                        <option value="">Bắc Ninh</option>
+                        <option value="">Bắc Giang</option>
+                    </select>
+                    <select class="slt-distric" name="select-distric" id="select-district">
+                        <option value="null">Chọn quận / huyện</option>
+                        <option value="">Hoàn Kiếm</option>
+                        <option value="">Văn Giang</option>
+                        <option value="">Quận 1</option>
+                        <option value="">Đồ Sơn</option>
+                        <option value="">Quế Võ</option>
+                        <option value="">Lục Ngạn</option>
+                    </select>
+                    <select class="slt-phuongxa" name="select-distric" id="select-district">
+                        <option value="null">Chọn phường / xã </option>
+                        <option value="">Phan chu trinh</option>
+                        <option value="">Thị trấn Văn giang </option>
+                        <option value=""> Hoà bình</option>
+                        <option value=""> Minh đức</option>
+                        <option value=""> Châu phong</option>
+                        <option value=""> Phong minh</option>
+                    </select>
+                </div> <input type="text" class="input-address" placeholder="Số nhà,tên đường (nếu có)">
+
+                <div class="Shipcode">
+                    <p class="Shipcode-text">Phương thức thanh toán</p>
+                    <div class="Shipcode-img">
+                        <div class="radio">
+                            <input name="gender" type="radio">
+                        </div>
+                        <div class="img">
+                            <img src="images/thanhtoan.png">
+                            <div class="img-text">
+                                <span> <p> Thanh toán khi nhận hàng (COD)</p></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Shipcode-img">
+                        <div class="radio">
+                            <input name="gender" type="radio">
+                        </div>
+                        <div class="img">
+                            <img src="images/MoMo_Logo.png">
+                            <div class="img-text">
+                                <span> <p> Thanh toán qua Momo</p></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                        
+                </div>
+                <div class="Payment">
+                    <a href="Success.html" class="btn-submit" type="submit" onclick="ThanhToan()"> Đặt Hàng </a>
+                </div>
+            </form>
+        </div>
+        <div class="info-product">
+            <table class="buyed-product">
+                <tbody id="listCart">
+                    <!-- <tr>
+                        <td class="img-product"><img src="IMG/gomnhat.jpg"></td>
+                        <td class="name-product">Chậu gốm Nhật / Vàng / 40
+                        </td>
+                        <td>200000₫</td>
+                        <td class="quantity">1</td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div class="code-sale">
+                <input type="text" class="input-code" placeholder="Mã giảm giá">
+                <button class="use-code">Sử dụng</button>
+            </div>
+            <div class="box-price">
+                <p>Tạm tính</p>
+                <p class="price-before spTong"> 0₫</p>
+            </div>
+            <div class="pay-trans">
+                <p>Phí vận chuyển</p>
+                <p class="price-trans">—</p>
+            </div>
+            <div class="total-price">
+                <p>Tổng cộng</p>
+                <p class="price-after spTong"> 0₫</p>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+<footer class="section-p1 ">
+    <div class="col">
+        <img class="logo" src="images/logo.png" alt="">
+        <h4>Liên Hệ</h4>
+        <p> <strong>Địa Chỉ: </strong> Hưng Yên</p>
+        <p> <strong>Điện Thoại: </strong> 0988846230</p>
+        <p> <strong>Mở cửa: </strong> 7h - 23h từ thứ 2 - chủ nhật </p>
+        <div class="follow" >
+            <h4>Theo dõi chúng tôi</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>Liên hệ</h4>
+        <a href="#">Liên hệ chúng tôi</a>
+        <a href="#">Thông tin giao hàng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản và điều kiện</a>
+        <!-- <a href="#">Contact Us</a> -->
+    </div>
+
+    <div class="col">
+        <h4>Tài khoản của tôi</h4>
+        <a href="#">Đăng nhập</a>
+        <a href="#">Xem giỏ hàng</a>
+        <a href="#">Sản phẩm yêu thích</a>
+        <a href="#">Theo dõi đơn hàng</a>
+        <a href="#">Trợ giúp</a>
+    </div>
+
+    <div class="col install">
+        <h4>Tải ứng dụng</h4>
+        <p>Trên App Store hoặc Google Play </p>
+        <div class="row">
+            <img src="IMG/app.jpg" alt="">
+            <img src="IMG/play.jpg" alt="">
+        </div>
+        <p>Cổng thanh toán an toàn</p>
+            <img src="IMG/pay.png" alt="">
+    </div>
+</footer>
+<script src="payment.js"></script>
+</body>
+</html>

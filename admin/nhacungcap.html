@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="../index.html"><img src="../images/logo.png" alt=""></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Tổng Quan </a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li class="active"><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img style="width: 100%;" src="../images/avt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Danh sách nhà cung cấp</h2>
+                </div>
+                <div class="title-right">
+                    <a href="nhacungcap-them.html" class="btn btn-green"><i class="fa fa-plus"></i> Thêm nhà cung cấp</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Họ tên</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Thao tác</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn An</td>
+                        <td>Nam</td>
+                        <td>NguyenVanAn@gmail.com</td>
+                        <td>0999866333</td>
+                        <td>
+                            <a href="nhacungcap-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Thu An</td>
+                        <td>Nữ</td>
+                        <td>ThuAn@gmail.com</td>
+                        <td>0999866222</td>
+                        <td>
+                            <a href="nhacungcap-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Nguyễn Văn Anh</td>
+                        <td>Nam</td>
+                        <td>NguyenVanAnh@gmail.com</td>
+                        <td>0999866111</td>
+                        <td>
+                            <a href="nhacungcap-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Nguyễn Văn Ba</td>
+                        <td>Nam</td>
+                        <td>VanBa@gmail.com</td>
+                        <td>0999888333</td>
+                        <td>
+                            <a href="nhacungcap-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../jquery/jquery.min.js"></script>
+
+<script>
+    // $(".xoa-item"): lấy về cái nút có class là xoa-item
+    $(".xoa-item").click(function() { 
+        $(this).parent().parent().remove(); 
+    });
+</script>
+</html>

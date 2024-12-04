@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+    <section id="header">
+      
+        <a href="#"><img src="images/logo.png" alt="" class="logo"></a>
+        <div>
+            <ul id="navbar">
+               
+                <li><a class="active" href="index.html">Trang Chủ</a></li>
+                <li><a href="shop.html">Cửa Hàng</a></li>
+                <li><a href="blog.html">Bài viết</a></li>
+                <li><a href="about.html">Liên Hệ</a></li>
+                <li><a href="contact.html">Hỗ trợ</a></li>
+                <li><a href="testgiohang.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a></li>
+            </ul>
+        </div>
+          
+    </section>
+    
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="images/anh5.jpg" width="100%" id="MainImg" alt="">
+            <div class="small-image-group">
+                <div class="small-img-col">
+                    <img src="images/nike-cortez-hình-nhỏ-1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/nike-cortez-hình-nhỏ-2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/nike-cortez-hình-nhỏ-3.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/nike-cortez-hình-nhỏ-4.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6>Home/ Nike</h6>
+            <h4>Nike Cortez</h4>
+            <h2>699.000đ</h2>
+            <select id="size">
+                <option>Chọn Size</option>
+                <option>36</option>
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+            </select>
+            <input id="quantity" type="number" value="0">
+            <button class="normal" onclick="addToCart({id:'04', img:'images/anh5.jpg',name:'Nike Cortez',price:'699000',size: document.getElementById('size').value,quantity: document.getElementById('quantity').value})" >Thêm vào giỏ hàng</button>
+            <h4>Thông tin chi tiết sản phẩm</h4>
+            <span>
+                QUY ĐỊNH ĐỔI TRẢ HÀNG: Quý khách có quyền đổi trả hàng trong vòng 07 ngày kể từ ngày
+                 nhận hàng (với điều kiện GIÀY CÒN MỚI NGUYÊN-CHƯA QUA SỬ DỤNG) 
+                cho những trường hợp sau:
+✔️Hàng lỗi nghiêm trọng do sản xuất; hàng giao sai mẫu, nhầm size. Anh/chị
+ vui lòng inbox lại Shop để được hướng dẫn trả hàng/hoàn tiền và hỗ trợ 100% phí ship.
+✔️Trường hợp anh/chị đổi giày do muốn đổi size, đổi mẫu khác thì cũng xin inbox lại shop để đư
+ợc hướng dẫn. Nếu anh/chị không đến đổi trực tiếp được thì chi phí ship 2 chiều sẽ chịu 100% để thuê bên vận chuyển, bưu điện đi đổi hộ.
+Vì vậy, anh/chị vui lòng đọc kỹ quy định đổi trả hàng ạ😊
+<br>
+💥Hướng dẫn bảo quản Giày <br>
+ – Nếu bạn thường thuyên đi giày nên vệ sinh 1-2 lần/1 tuần. <br>
+ – Không nên giặt bằng máy giặt vì sẽ làm cho đôi giày trở nên biến dạng mất form giày. <br>
+ – Tránh ngâm trong nước quá lâu. <br>
+ – Không sử dụng chất tẩy rửa. <br>
+ – Tránh tiếp xúc với các chất gây loang màu.
+            
+            </span>
+                
+        </div>
+
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Sản Phẩm nổi bật</h2>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="images/anh20.jpg" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Adidas EQT</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>799.000đ</h4>
+                </div>
+                <a href="">  <i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="images/anh21.jpg" alt="">
+                <!-- info sản phẩm -->
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Adidas</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>799.000đ</h4>
+                </div>
+                <a href="">  <i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/anh22.jpg" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Adidas</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>799.000đ</h4>
+                </div>
+                <a href="">  <i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="images/anh23.jpg" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Adidas</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>799.000đ</h4>
+                </div>
+                <a href="">  <i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            
+            </div>
+       
+    </section>
+    
+
+   <!-- phản hồi -->
+   <!-- class section-p1: padding | ection-m1: margin -->
+<section id="feedback" class="section-p1  section-m1">
+    <div class="newtext">
+        <h4>Gửi phản hồi cho chúng tôi</h4>
+        <p>Nhận cập nhật qua email về cửa hàng mới nhất của chúng tôi và <span>các ưu đãi đặc biệt</span></p>
+      
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Địa chỉ email của bạn">
+        <button class="normal">Phản hồi</button>
+      
+
+    </div>
+</section>
+<!-- footer -->
+<footer class="section-p1 ">
+    <div class="col">
+        <img class="logo" src="images/logo.png" alt="">
+        <h4>Liên Hệ</h4>
+        <p> <strong>Địa Chỉ: </strong> Hưng Yên</p>
+        <p> <strong>Điện Thoại: </strong> 0988846230</p>
+        <p> <strong>Mở cửa: </strong> 7h - 23h từ thứ 2 - chủ nhật </p>
+        <div class="follow" >
+            <h4>Theo dõi chúng tôi</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>Liên hệ</h4>
+        <a href="#">Liên hệ chúng tôi</a>
+        <a href="#">Thông tin giao hàng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản và điều kiện</a>
+        <!-- <a href="#">Contact Us</a> -->
+    </div>
+
+    <div class="col">
+        <h4>Tài khoản của tôi</h4>
+        <a href="#">Đăng nhập</a>
+        <a href="#">Xem giỏ hàng</a>
+        <a href="#">Sản phẩm yêu thích</a>
+        <a href="#">Theo dõi đơn hàng</a>
+        <a href="#">Trợ giúp</a>
+    </div>
+
+    <div class="col install">
+        <h4>Tải ứng dụng</h4>
+        <p>Trên App Store hoặc Google Play </p>
+        <div class="row">
+            <img src="images/app.jpg" alt="">
+            <img src="images/play.jpg" alt="">
+        </div>
+        <p>Cổng thanh toán an toàn</p>
+            <img src="images/pay.png" alt="">
+           
+    </div>
+</footer>
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smallimg = document.getElementsByClassName("small-img");
+    smallimg[0].onclick = function(){
+    MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function(){
+    MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function(){
+    MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function(){
+    MainImg.src = smallimg[3].src;
+    }
+</script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

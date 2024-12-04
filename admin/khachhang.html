@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <a href="../index.html"><img src="../images/logo.png" alt=""></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Tổng Quan </a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li class="active"><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img style="width: 100%;" src="../images/avt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Danh sách khách hàng</h2>
+                </div>
+                <div class="title-right">
+                    <a href="khachhang-them.html" class="btn btn-green"><i class="fa fa-plus"></i> Thêm khách hàng</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Ảnh đại diện</th>
+                        <th>Họ tên</th>
+                        <th>Giới tính</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Thao tác</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="image-avatar">
+                                <img src="../images/user-1.png" alt="...">
+                            </div>
+                        </td>
+                        <td>John</td>
+                        <td>Nam</td>
+                        <td>John@gmail.com</td>
+                        <td>0999222777</td>
+                        <td>
+                            <a href="khachhang-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="image-avatar">
+                                <img src="../images/user-2.png" alt="...">
+                            </div>
+                        </td>
+                        <td>Arthur</td>
+                        <td>Nam</td>
+                        <td>Arthur@gmail.com</td>
+                        <td>0999333222</td>
+                        <td>
+                            <a href="khachhang-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="image-avatar">
+                                <img src="../images/user-3.png" alt="...">
+                            </div>
+                        </td>
+                        <td>Jennie</td>
+                        <td>Nữ</td>
+                        <td>Jennie@gmail.com</td>
+                        <td>0998822311</td>
+                        <td>
+                            <a href="khachhang-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="image-avatar">
+                                <img src="../images/user-1.png" alt="...">
+                            </div>
+                        </td>
+                        <td>Tomixiaomi</td>
+                        <td>Nam</td>
+                        <td>Tomixiaomi@gmail.com</td>
+                        <td>0999888777</td>
+                        <td>
+                            <a href="khachhang-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../jquery/jquery.min.js"></script>
+
+<script>
+    // $(".xoa-item"): lấy về cái nút có class là xoa-item
+    $(".xoa-item").click(function() { 
+
+        $(this).parent().parent().remove(); 
+    });
+</script>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="stylesheet" href="quantri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body onload="show()">
+    <div class="menu">
+        <div class="logo">
+            <a href="../index.html"><img src="../images/logo.png" alt=""></a>
+        </div>
+
+        <ul class="nav">
+            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Tổng Quan </a></li>
+        </ul>
+
+        <div class="title">ADMIN SHOP</div>
+        <ul class="nav">
+            <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
+            <li class="active"><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
+            <li><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
+            <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
+            <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div class="row">
+                <div class="avatar">
+                    <img src="../images/avt.jpg" alt="">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <div class="title-left">
+                    <h2>Danh sách sản phẩm</h2>
+                </div>
+                <div class="title-right">
+                    <a href="sanpham-them.html" class="btn btn-green"><i class="fa fa-plus"></i> Thêm sản phẩm</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thao tác</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="../images/anh10.jpg" alt="...">
+                            </div>
+                        </td>
+                        <td>Adidas EQT</td>
+                        <td>Loại 1</td>
+                        <td>20</td>
+                        <td>550.000đ</td>
+                        <td>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="../images/anh9.jpg" alt="...">
+                            </div>
+                        </td>
+                        <td>Adidas Anphabouce</td>
+                        <td>Loại 2</td>
+                        <td>20</td>
+                        <td>500.000đ</td>
+                        <td>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="../images/nikejd4-hinh4.jpg" alt="...">
+                            </div>
+                        </td>
+                        <td>Nike-Jordan 4 xanh đen</td>
+                        <td>Loại 3</td>
+                        <td>30</td>
+                        <td>600.000đ</td>
+                        <td>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button onclick="return confirm('Bạn có chắc muốn xóa không?')" class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="../images/Nike-Air-Force-hinh-nhỏ-3.jpg" alt="...">
+                            </div>
+                        </td>
+                        <td>Nike AF1</td>
+                        <td>Loại 4</td>
+                        <td>20</td>
+                        <td>450.000đ</td>
+                        <td>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="../images/nike-cortez-hình-nhỏ-4.jpg" alt="...">
+                            </div>
+                        </td>
+                        <td>Nike Cortez</td>
+                        <td>Loại 5</td>
+                        <td>20</td>
+                        <td>600.000đ</td>
+                        <td>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit" ></i></button></a>
+                            <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer">
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../jquery/jquery.min.js"></script>
+
+<script>
+    // $(".xoa-item"): lấy về cái nút có class là xoa-item
+    // $(".xoa-item").click(function() { 
+    //     if(confirm('Bạn có chắc muốn xóa sản phẩm này không?')){
+    //         $(this).parent().parent().remove(); 
+    //     }
+        
+    // });
+    function deleted(id) {
+    // Hiển thị hộp thoại xác nhận
+    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?");
+
+    if (confirmDelete) {
+        // Lấy danh sách sản phẩm từ LocalStorage
+        let list = JSON.parse(localStorage.getItem('sanpham')) || [];
+
+        // Lọc bỏ sản phẩm có ID trùng với ID cần xóa
+        list = list.filter(item => item.id !== id);
+
+        // Cập nhật danh sách sản phẩm trong LocalStorage
+        localStorage.setItem('sanpham', JSON.stringify(list));
+
+        // Hiển thị lại danh sách sau khi xóa
+        show();
+
+        alert('Sản phẩm đã được xóa thành công!');
+    } else {
+        alert('Hành động xóa đã bị hủy.');
+    }
+}
+
+
+    function show(){
+        let list =JSON.parse(localStorage.getItem('sanpham')) || [];
+        let tables = document.querySelector('.table');
+        tables.innerHTML='';
+        tables.innerHTML=`<tr>
+                        <th>#</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thao tác</th>
+                    </tr>`;
+        list.forEach(item => {
+            let htmls= `
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="image-product">
+                                <img src="${item.imgsrc}" alt="...">
+                            </div>
+                        </td>
+                        <td>${item.tensanpham}</td>
+                        <td>${item.loaisanpham}</td>
+                        <td>${item.soluong}</td>
+                        <td>${item.dongia}</td>
+                        <td>
+                            
+                                <button class="btn btn-orange" onclick="getid('${item.id}')">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                            
+                            <button class="btn btn-red xoa-item" onclick="deleted('${item.id}')"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>`;
+                    tables.innerHTML+=htmls;
+        });
+    }
+    function getid(ma) {
+    
+    let list =JSON.parse(localStorage.getItem('sanpham')) || [];
+    list.forEach(item => {
+        if(item.id==ma){
+            let listpro =[{
+                id:item.id,
+                loaisanpham:item.loaisanpham,
+                mota: item.mota,
+                soluong: item.soluong,
+                tensanpham:item.tensanpham,
+                dongia: item.dongia,
+                imgsrc:item.imgsrc,
+            }]
+            window.localStorage.setItem('getid',JSON.stringify(listpro));
+            window.location.href='sanpham-sua.html';
+            
+        }
+    });
+    
+    
+}
+</script>
+</html>

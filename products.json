@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "brand": "Adidas",
+        "name": "Adidas EQT",
+        "image": ["images/anh20.jpg"],
+        "price": 799000,
+        "rating": 5,
+        "category": "Sản Phẩm Mới Về",
+        "detailsPage": "sproduct.html"
+    },
+    {
+        "id": 2,
+        "brand": "Adidas",
+        "name": "Adidas",
+        "image": [
+            "images/anh21.jpg",
+            "images/anh22.jpg",
+            "images/anh23.jpg",
+            "images/anh7.jpg",
+            "images/anh8.jpg",
+            "images/anh9.jpg"
+        ],
+        "price": 799000,
+        "rating": 5,
+        "category": "Sản Phẩm Mới Về",
+        "detailsPage": ""
+    },
+    {
+        "id": 5,
+        "brand": "Nike",
+        "name": "Nike",
+        "image": [
+            "images/anh24.jpg",
+            "images/anh25.jpg",
+            "images/anh26.jpg",
+            "images/anh27.jpg"
+        ],
+        "price": 799000,
+        "rating": 5,
+        "category": "Sản Phẩm Mới Về",
+        "detailsPage": ""
+    },
+    {
+        "id": 9,
+        "brand": "Nike",
+        "name": "Nike Custumer Gucci",
+        "image": ["images/anh2.jpg"],
+        "price": 700000,
+        "rating": 5,
+        "category": "Sản Phẩm Hot",
+        "detailsPage": ""
+    },
+    {
+        "id": 10,
+        "brand": "Nike",
+        "name": "Nike Jordan 4",
+        "image": ["images/nikejd4-hinh4.jpg"],
+        "price": 799000,
+        "rating": 5,
+        "category": "Sản Phẩm Hot",
+        "detailsPage": "sproduct1.html"
+    },
+    {
+        "id": 11,
+        "brand": "Nike",
+        "name": "Nike AF1",
+        "image": ["images/anh4.jpeg"],
+        "price": 650000,
+        "rating": 5,
+        "category": "Sản Phẩm Mới Về",
+        "detailsPage": "sproduct2.html"
+    },
+    {
+        "id": 12,
+        "brand": "Nike",
+        "name": "Nike Cortez",
+        "image": ["images/anh5.jpg"],
+        "price": 690000,
+        "rating": 5,
+        "category": "Sản Phẩm Mới Về",
+        "detailsPage": "sproduct3.html"
+    },
+    {
+        "id": 13,
+        "brand": "Nike",
+        "name": "Nike",
+        "image": ["images/anh6.jpg"],
+        "price": 799000,
+        "rating": 2,
+        "category": "Sản Phẩm Hot",
+        "detailsPage": ""
+    }
+]
