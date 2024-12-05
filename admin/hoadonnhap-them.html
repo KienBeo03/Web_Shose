@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang quản trị</title>
+    <title>Thêm Hóa Đơn Nhập</title>
     <link rel="stylesheet" href="quantri.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <style>
-        table {
-            width: 100%;
-            margin: 15px 6px;
-        }
-
-        table td {
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
     <div class="menu">
@@ -26,14 +15,14 @@
         </div>
 
         <ul class="nav">
-            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Tổng Quan </a></li>
+            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Thống kê </a></li>
         </ul>
 
         <div class="title">ADMIN SHOP</div>
         <ul class="nav">
             <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
             <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
-            <li class="active"><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonnhap.html"><i class="fa fa-cart-plus"></i> Hóa đơn nhập</a></li>
             <li><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
             <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
             <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
@@ -52,86 +41,91 @@
         <div class="card">
             <div class="row">
                 <div class="title-left">
-                    <h2>Thêm hóa đơn nhập</h2>
+                    <h2>Thêm Hóa Đơn Nhập</h2>
+                </div>
+                <div class="title-right">
+                    <a href="hoadonnhap.html" class="btn btn-red"><i class="fa fa-arrow-left"></i> Quay lại</a>
                 </div>
             </div>
-            <form action="" method="post">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-4"><label> Nhà cung cấp:</label></div>
-                        <div class="col-8">
-                            <select name="loaisanpham"  class="form-control" required>
-                                <option >-- Chọn nhà cung cấp --</option>
-                                <option >Nguyễn Văn An</option>
-                                <option >Nguyễn Thu An </option>
-                                <option >Nguyễn Văn Anh</option>
-                                <option >Nguyễn Văn Ba</option>
-                            </select>
-                        </div>
+            <div class="card-body">
+                <form action="hoadonnhap-xuly.html" method="POST">
+                    <div class="form-group">
+                        <label for="nhacungcap">Nhà cung cấp:</label>
+                        <input type="text" id="nhacungcap" name="nhacungcap" required placeholder="Nhập tên nhà cung cấp" class="form-control">
                     </div>
-                    <div class="row">
-                        <div class="col-4"><label>Ghi chú:</label></div>
-                        <div class="col-8">
-                            <textarea name="mota" class="form-control" placeholder="Nhập ghi chú" rows="6" required></textarea>
-                        </div>
+
+                    <div class="form-group">
+                        <label for="diachi">Địa chỉ:</label>
+                        <input type="text" id="diachi" name="diachi" required placeholder="Nhập địa chỉ nhà cung cấp" class="form-control">
                     </div>
-                    <div class="row">
-                        <table>
-                            <tbody id="ds-san-pham">
-                                <tr>
-                                    <th style="width: 40%;">Sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th style="width: 10%;">Hành động</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="btn btn-green" id="them-san-pham" type="button">Thêm sản phẩm</button>
+
+                    <div class="form-group">
+                        <label for="tongsanpham">Tổng số sản phẩm:</label>
+                        <input type="number" id="tongsanpham" name="tongsanpham" required placeholder="Nhập tổng số sản phẩm" class="form-control">
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-green">Tạo hóa đơn</button>
-                    <button type="reset" class="btn btn-red">Nhập lại</button>
-                </div>
-            </form>
+
+                    <div class="form-group">
+                        <label for="tongtien">Tổng tiền:</label>
+                        <input type="text" id="tongtien" name="tongtien" required placeholder="Nhập tổng tiền" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ngaytao">Ngày tạo:</label>
+                        <input type="datetime-local" id="ngaytao" name="ngaytao" required class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-green"><i class="fa fa-save"></i> Lưu hóa đơn</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
 
 <script src="../jquery/jquery.min.js"></script>
 
-<script>
-
-    // chuỗi mã html để hiển thị ra form nhập của 1 sp
-    var sp = '<tr>\
-        <td>\
-            <select class="form-control" required>\
-                <option>Sản phẩm 1</option>\
-                <option>Sản phẩm 2</option>\
-                <option>Sản phẩm 3</option>\
-                <option>Sản phẩm 4</option>\
-            </select>\
-        </td>\
-        <td>\
-            <input type="number" class="form-control" placeholder="Số lượng">\
-        </td>\
-        <td>\
-            <input type="number" class="form-control" placeholder="Đơn giá">\
-        </td>\
-        <td>\
-            <button class="btn btn-red" onclick="xoa_san_pham(this)"><i class="fa fa-trash"></i></button>\
-        </td>\
-    </tr>';
-    
-    $("#them-san-pham").click(function(e) { 
-        $("#ds-san-pham").append(sp); 
-    });
-
-    function xoa_san_pham(e) { 
-        let btn = $(e);
-
-        btn.parent().parent().remove(); 
-    }
-</script>
-
 </html>
+
+<script>
+    $(document).ready(function() {
+    // Lắng nghe sự kiện submit của form
+    $("form").submit(function(event) {
+        // Ngừng gửi form để kiểm tra dữ liệu trước
+        event.preventDefault();
+
+        // Lấy dữ liệu từ các input
+        let nhacungcap = $("#nhacungcap").val();
+        let diachi = $("#diachi").val();
+        let tongsanpham = $("#tongsanpham").val();
+        let tongtien = $("#tongtien").val();
+        let ngaytao = $("#ngaytao").val();
+
+        // Kiểm tra nếu có trường nào còn trống
+        if (nhacungcap === "" || diachi === "" || tongsanpham === "" || tongtien === "" || ngaytao === "") {
+            alert("Vui lòng điền đầy đủ thông tin.");
+            return false;
+        }
+
+        // Kiểm tra số tiền có phải là số hợp lệ không
+        let regexTien = /^[0-9,]+$/;
+        if (!regexTien.test(tongtien)) {
+            alert("Vui lòng nhập tổng tiền hợp lệ (chỉ chứa chữ số và dấu phẩy).");
+            return false;
+        }
+
+        // Kiểm tra tổng số sản phẩm phải là số dương
+        if (isNaN(tongsanpham) || tongsanpham <= 0) {
+            alert("Tổng số sản phẩm phải là một số dương.");
+            return false;
+        }
+
+        // Nếu dữ liệu hợp lệ, giả lập lưu thành công và chuyển hướng
+        alert("Hóa đơn đã được lưu thành công!");
+
+        // Chuyển hướng sang trang 'hoadonnhap.html'
+        window.location.href = "hoadonnhap.html";
+    });
+});
+
+</script>
