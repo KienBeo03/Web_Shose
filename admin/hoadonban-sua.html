@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang quản trị</title>
+    <title>Sửa hóa đơn bán</title>
     <link rel="stylesheet" href="quantri.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <style>
-        table {
-            width: 100%;
-            margin: 15px 6px;
-        }
-
-        table td {
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
     <div class="menu">
@@ -26,14 +15,14 @@
         </div>
 
         <ul class="nav">
-            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Tổng Quan </a></li>
+            <li><a href="bangdieukhien.html"><i class="fa fa-cubes"></i> Thống kê </a></li>
         </ul>
 
         <div class="title">ADMIN SHOP</div>
         <ul class="nav">
             <li><a href="loaisanpham.html"><i class="fa fa-cubes"></i> Loại sản phẩm</a></li>
             <li><a href="sanpham.html"><i class="fa fa-cubes"></i> Danh sách sản phẩm</a></li>
-            <li ><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
+            <li><a href="hoadonnhap.html"><i class="fa fa-sticky-note-o"></i> Hóa đơn nhập</a></li>
             <li class="active"><a href="hoadonban.html"><i class="fa fa-shopping-basket"></i> Hóa đơn bán</a></li>
             <li><a href="nhacungcap.html"><i class="fa fa-truck"></i> Quản lý nhà cung cấp</a></li>
             <li><a href="khachhang.html"><i class="fa fa-users"></i> Quản lý khách hàng</a></li>
@@ -55,97 +44,90 @@
                     <h2>Sửa hóa đơn bán</h2>
                 </div>
             </div>
-            <form action="" method="post">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-4"><label> Khách hàng:</label></div>
-                        <div class="col-8">
-                                <input type="text" name="tenkhachhang" class="form-control" placeholder="Nhập họ tên khách hàng" required>
-                            </div>
-                        </div>
+            <div class="card-body">
+                <form id="edit-invoice-form">
+                    <div class="form-group">
+                        <label for="customer-name">Tên khách hàng:</label>
+                        <input type="text" id="customer-name" name="customer-name" value="Nguyễn Văn A" required>
                     </div>
-                    <div class="row">
-                        <div class="col-4"><label> Hình thức thanh toán:</label></div>
-                        <div class="col-8">
-                            <input type="radio" name="payment" checked> Thanh toán khi nhận hàng (COD)<br>
-                            <input type="radio" name="payment"> Thanh toán thẻ tín dụng (ATM)
-                        </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email:</label>
+                        <input type="email" id="customer-email" name="customer-email" value="nguyenvana@gmail.com" required>
                     </div>
-                    <div class="row">
-                        <div class="col-4"><label> Trạng thái đơn hàng:</label></div>
-                        <div class="col-8">
-                            <select name="loaisanpham"  class="form-control" required>
-                                <option >Chưa duyệt đơn</option>
-                                <option >Đã duyệt đơn</option>
-                                <option >Đang giao hàng</option>
-                                <option >Đã giao hàng</option>
-                                <option >Hủy đơn hàng</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="product-count">Tổng sản phẩm:</label>
+                        <input type="number" id="product-count" name="product-count" value="3" required>
                     </div>
-                    <div class="row">
-                        <div class="col-4"><label>Ghi chú:</label></div>
-                        <div class="col-8">
-                            <textarea name="mota" class="form-control" placeholder="Nhập ghi chú" rows="6" required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="total-price">Tổng tiền:</label>
+                        <input type="text" id="total-price" name="total-price" value="300,000" required>
                     </div>
-                    <div class="row">
-                        <table>
-                            <tbody id="ds-san-pham">
-                                <tr>
-                                    <th style="width: 40%;">Sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th style="width: 10%;">Hành động</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="btn btn-green" id="them-san-pham" type="button">Thêm sản phẩm</button>
+                    <div class="form-group">
+                        <label for="status">Trạng thái:</label>
+                        <select id="status" name="status" required>
+                            <option value="Chưa duyệt đơn">Chưa duyệt đơn</option>
+                            <option value="Đã nhận hàng" selected>Đã nhận hàng</option>
+                        </select>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-green">Sửa hóa đơn</button>
-                    <button type="reset" class="btn btn-red">Nhập lại</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="date-created">Ngày tạo:</label>
+                        <input type="datetime-local" id="date-created" name="date-created" value="2024-12-04T10:30" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-green" id="update-button"><i class="fa fa-save"></i> Cập nhật hóa đơn</button>
+                        <a href="hoadonban.html" class="btn btn-red"><i class="fa fa-times"></i> Hủy</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</body>
 
-<script src="../jquery/jquery.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("edit-invoice-form");
+    const updateButton = document.getElementById("update-button");
+    const totalPriceInput = document.getElementById("total-price");
 
-<script>
-
-    // chuỗi mã html để hiển thị ra form nhập của 1 sp
-    var sp = '<tr>\
-        <td>\
-            <select class="form-control" required>\
-                <option>Sản phẩm 1</option>\
-                <option>Sản phẩm 2</option>\
-                <option>Sản phẩm 3</option>\
-                <option>Sản phẩm 4</option>\
-            </select>\
-        </td>\
-        <td>\
-            <input type="number" class="form-control" placeholder="Số lượng">\
-        </td>\
-        <td>\
-            <input type="number" class="form-control" placeholder="Đơn giá">\
-        </td>\
-        <td>\
-            <button class="btn btn-red" onclick="xoa_san_pham(this)"><i class="fa fa-trash"></i></button>\
-        </td>\
-    </tr>';
-    
-    $("#them-san-pham").click(function(e) { 
-        $("#ds-san-pham").append(sp); 
+    totalPriceInput.addEventListener("input", function () {
+        const value = totalPriceInput.value.replace(/\D/g, ""); // Loại bỏ ký tự không phải số
+        totalPriceInput.value = new Intl.NumberFormat("vi-VN").format(value);
     });
 
-    function xoa_san_pham(e) { 
-        let btn = $(e);
+    updateButton.addEventListener("click", function () {
+        const customerName = document.getElementById("customer-name").value.trim();
+        const customerEmail = document.getElementById("customer-email").value.trim();
+        const productCount = document.getElementById("product-count").value.trim();
+        const totalPrice = totalPriceInput.value.trim();
+        const status = document.getElementById("status").value.trim();
+        const dateCreated = document.getElementById("date-created").value.trim();
 
-        btn.parent().parent().remove(); 
-    }
-</script>
+        if (!customerName || !customerEmail || !productCount || !totalPrice || !status || !dateCreated) {
+            alert("Vui lòng điền đầy đủ thông tin trước khi cập nhật.");
+            return;
+        }
 
+        if (!/^\d+$/.test(productCount) || parseInt(productCount) <= 0) {
+            alert("Tổng sản phẩm phải là một số hợp lệ và lớn hơn 0.");
+            return;
+        }
+
+        // Lưu dữ liệu vào localStorage
+        const invoiceData = {
+            customerName,
+            customerEmail,
+            productCount,
+            totalPrice,
+            status,
+            dateCreated
+        };
+
+        console.log("Saving invoice data to localStorage:", invoiceData); // Thêm log kiểm tra
+        localStorage.setItem("invoiceData", JSON.stringify(invoiceData)); // Lưu vào localStorage
+
+        alert("Hóa đơn đã được cập nhật thành công!");
+        window.location.href = "hoadonban.html"; // Chuyển hướng
+    });
+});
+    </script>
+</body>
 </html>
