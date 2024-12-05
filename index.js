@@ -48,19 +48,21 @@ document.addEventListener('DOMContentLoaded', loadProducts);
 
 // Hàm tìm kiếm và hiển thị kết quả
 async function searchData() {
-    try {
-        // Lấy giá trị từ ô tìm kiếm và chuyển về chữ thường
-        const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!searchQuery) {
+        // Nếu không có gì để tìm kiếm, không thực hiện lọc
+        return;
+    }
 
-        // Gọi API để tải dữ liệu sản phẩm
+    try {
+        // Tải dữ liệu sản phẩm
         const response = await fetch('products.json');
         const products = await response.json();
 
-        // Lọc sản phẩm dựa trên từ khóa tìm kiếm
+        // Lọc sản phẩm dựa trên tên hoặc mô tả
         const filteredProducts = products.filter(product => 
-            product.name.toLowerCase().includes(searchQuery) ||
-            product.brand.toLowerCase().includes(searchQuery) ||
-            product.category.toLowerCase().includes(searchQuery)
+            product.name.toLowerCase().includes(searchQuery) || 
+            product.brand.toLowerCase().includes(searchQuery)
         );
 
         // Hiển thị kết quả tìm kiếm
@@ -68,26 +70,25 @@ async function searchData() {
         resultList.innerHTML = '';
 
         if (filteredProducts.length === 0) {
-            resultList.innerHTML = '<li>Không tìm thấy sản phẩm phù hợp.</li>';
-            return;
-        }
-
-        filteredProducts.forEach(product => {
-            const productHTML = `
+            const noResultsMessage = document.createElement('li');
+            noResultsMessage.textContent = 'No products found.';
+            resultList.appendChild(noResultsMessage);
+        } else {
+            filteredProducts.forEach(product => {
+                const productHTML = `
                 <li>
-                    <div class="search-result-item">
-                        <img src="${product.image[0]}" alt="${product.name}" class="search-result-image">
-                        <div class="search-result-details">
-                            <h5>${product.name}</h5>
-                            <span>Thương hiệu: ${product.brand}</span><br>
-                            <span>Giá: ${product.price}đ</span>
-                        </div>
+                    <img src="${product.image[0]}" alt="${product.name}" width="50" height="50">
+                    <div>
+                        <h5>${product.name}</h5>
+                        <p>${product.brand}</p>
+                        <p>Price: ${product.price}đ</p>
+                        <a href="${product.detailsPage}">View Details</a>
                     </div>
                 </li>`;
-            resultList.innerHTML += productHTML;
-        });
+                resultList.innerHTML += productHTML;
+            });
+        }
     } catch (error) {
-        console.error('Lỗi khi tìm kiếm sản phẩm:', error);
-        document.getElementById('resultList').innerHTML = '<li>Lỗi khi tải dữ liệu tìm kiếm.</li>';
+        console.error('Lỗi khi tải sản phẩm:', error);
     }
 }

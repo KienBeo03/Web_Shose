@@ -49,15 +49,15 @@
 }
 
 .search{
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    margin: 15px;
+    text-align: center;
+}
+.search .input-search{
+    margin: 1px;
 }
 .search i{
-    position: absolute;
-    right: 22%;
+    position: relative;
+    right: 40px;
     color: #088178;
 }
 .search input{
@@ -315,7 +315,8 @@ color: #088178;
     justify-content: space-between;
     padding-top: 20px;
     flex-wrap: wrap;
-
+    padding-left: 50px;
+    padding-right: 50px;
 
 }
 

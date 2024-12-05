@@ -1,0 +1,59 @@
+/* Định dạng cho kết quả tìm kiếm */
+#resultList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 300px;
+}
+
+#resultList li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+#resultList li:hover {
+    background-color: #f0f0f0;
+}
+
+#resultList img {
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+#resultList li div {
+   
+}
+
+#resultList h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#resultList p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+#resultList a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#resultList a:hover {
+    text-decoration: underline;
+}
+
+/* Thông báo không có kết quả */
+#resultList li.no-results {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
