@@ -464,3 +464,164 @@ span.status {
 .status.status-green {
     background-color: #00e800;
 }
+
+/* Form Thêm hóa đơn bán */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-buttons button,
+.form-buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-green {
+    background-color: #1abc9c;
+}
+
+.btn-green:hover {
+    background-color: #16a085;
+}
+
+.btn-red {
+    background-color: #e74c3c;
+}
+
+.btn-red:hover {
+    background-color: #c0392b;
+}
+
+/* Form Thêm hóa đơn nhập */
+.card-body {
+    margin-top: 20px;
+}
+
+.card-body .form-group {
+    margin-bottom: 15px;
+}
+
+.card-body .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-body .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+.card-body .form-group input:focus {
+    border-color: #62a3e6;
+}
+
+.card-body .form-group button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-body .form-group button:hover {
+    background-color: #2ecc71;
+}
+
+.card-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-footer .page a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    color: #2c3e50;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card-footer .page a:hover {
+    background-color: #62a3e6;
+    color: #fff;
+}
+
+.card-footer .page .active {
+    background-color: #62a3e6;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu {
+        padding: 10px;
+    }
+
+    .menu .logo img {
+        width: 100px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    form {
+        padding: 10px;
+    }
+}
+
+
