@@ -85,42 +85,61 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Lấy các thành phần
             const form = document.getElementById("add-invoice-form");
             const saveButton = document.getElementById("save-button");
             const totalPriceInput = document.getElementById("total-price");
 
-            // Định dạng số tiền
+            // Định dạng số tiền khi nhập
             totalPriceInput.addEventListener("input", function () {
-                const value = totalPriceInput.value.replace(/\D/g, ""); // Loại bỏ ký tự không phải số
+                const value = totalPriceInput.value.replace(/\D/g, "");
                 totalPriceInput.value = new Intl.NumberFormat("vi-VN").format(value);
             });
 
-            // Xử lý khi nhấn nút Lưu
+            // Xử lý lưu hóa đơn
             saveButton.addEventListener("click", function () {
-                const customerName = document.getElementById("customer-name").value.trim();
-                const customerEmail = document.getElementById("customer-email").value.trim();
-                const productCount = document.getElementById("product-count").value.trim();
-                const totalPrice = totalPriceInput.value.trim();
-                const status = document.getElementById("status").value.trim();
-                const dateCreated = document.getElementById("date-created").value.trim();
+                const khachhang = document.getElementById("customer-name").value.trim();
+                const email = document.getElementById("customer-email").value.trim();
+                const tongsanpham = document.getElementById("product-count").value.trim();
+                const tongtien = totalPriceInput.value.trim().replace(/\D/g, ""); // Chuyển thành số nguyên
+                const trangthai = document.getElementById("status").value.trim();
+                const ngaytao = document.getElementById("date-created").value.trim();
 
-                // Kiểm tra các trường
-                if (!customerName || !customerEmail || !productCount || !totalPrice || !status || !dateCreated) {
+                if (!khachhang || !email || !tongsanpham || !tongtien || !trangthai || !ngaytao) {
                     alert("Vui lòng điền đầy đủ thông tin trước khi lưu.");
                     return;
                 }
 
-                if (!/^\d+$/.test(productCount) || parseInt(productCount) <= 0) {
+                if (!/^[0-9]+$/.test(tongsanpham) || parseInt(tongsanpham) <= 0) {
                     alert("Tổng sản phẩm phải là một số hợp lệ và lớn hơn 0.");
                     return;
                 }
 
                 alert("Hóa đơn đã được lưu thành công!");
-                form.submit(); // Gửi form nếu tất cả đều hợp lệ
+
+                const invoice = {
+                    id:generateId(),
+                    khachhang,
+                    email,
+                    tongsanpham: parseInt(tongsanpham),
+                    tongtien: parseInt(tongtien),
+                    trangthai,
+                    ngaytao
+                };
+
+                console.log("Hóa đơn mới:", invoice);
+
+                // Lưu vào localStorage (tùy chọn)
+                const hoadonban = JSON.parse(localStorage.getItem("hoadonban")) || [];
+                hoadonban.push(invoice);
+                localStorage.setItem("hoadonban", JSON.stringify(hoadonban));
+
+                // Chuyển hướng về trang hóa đơn bán
                 window.location.href = "hoadonban.html";
             });
         });
+        function generateId() {
+            return '_' + Math.random().toString(36).substr(2, 9);
+        }
     </script>
 </body>
 </html>

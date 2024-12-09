@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang quản trị</title>
     <link rel="stylesheet" href="quantri.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="menu">
         <div class="logo">
@@ -34,7 +38,7 @@
             <div class="row">
                 <div class="avatar">
                     <img style="width: 100%;" src="../images/avt.jpg" alt="">
-                    
+
                 </div>
             </div>
         </div>
@@ -72,7 +76,8 @@
                         </td>
                         <td>03/06/2022 22:40:05</td>
                         <td>
-                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -88,7 +93,8 @@
                         </td>
                         <td>03/06/2022 22:50:05</td>
                         <td>
-                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -103,7 +109,8 @@
                         </td>
                         <td>03/06/2022 22:40:05</td>
                         <td>
-                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -118,7 +125,8 @@
                         </td>
                         <td>03/06/2022 22:40:05</td>
                         <td>
-                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="hoadonban-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -141,11 +149,84 @@
 <script src="../jquery/jquery.min.js"></script>
 
 <script>
-    // $(".xoa-item"): lấy về cái nút có class là xoa-item
-    $(".xoa-item").click(function() {
+    // Hàm xóa hóa đơn theo ID
+    function deleted(id) {
+        const confirmDelete = confirm("Bạn có chắc chắn muốn xóa hóa đơn này không?");
+        if (confirmDelete) {
+            // Lấy danh sách hóa đơn từ LocalStorage
+            let list = JSON.parse(localStorage.getItem('hoadonban')) || [];
 
-        $(this).parent().parent().remove(); 
+            // Lọc bỏ hóa đơn có ID trùng với ID cần xóa
+            list = list.filter(item => item.id !== id);
+
+            // Cập nhật danh sách hóa đơn trong LocalStorage
+            localStorage.setItem('hoadonban', JSON.stringify(list));
+
+            // Hiển thị lại danh sách sau khi xóa
+            show();
+
+            alert('Hóa đơn đã được xóa thành công!');
+        } else {
+            alert('Hành động xóa đã bị hủy.');
+        }
+    }
+
+    // Hàm hiển thị danh sách hóa đơn
+    function show() {
+        let list = JSON.parse(localStorage.getItem('hoadonban')) || [];
+        let table = document.querySelector('.table');
+        table.innerHTML = `
+            <tr>
+                <th>#</th>
+                <th>Khách hàng</th>
+                <th>Email</th>
+                <th>Tổng sản phẩm</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Ngày tạo</th>
+                <th>Thao tác</th>
+            </tr>
+        `;
+
+        list.forEach((item, index) => {
+            const row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${item.khachhang}</td>
+                    <td>${item.email}</td>
+                    <td>${item.tongsanpham}</td>
+                    <td>${item.tongtien}</td>
+                    <td>
+                        <span class="status ${item.trangthai === 'Đã nhận hàng' ? 'status-green' : 'status-orange'}">
+                            ${item.trangthai}
+                        </span>
+                    </td>
+                    <td>${item.ngaytao}</td>
+                    <td>
+                        <button class="btn btn-orange" onclick="getId('${item.id}')">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button class="btn btn-red" onclick="deleted('${item.id}')"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+            table.innerHTML += row;
+        });
+    }
+
+
+    function getId(id) {
+        localStorage.setItem("editInvoiceId", id);
+        window.location.href = "hoadonban-sua.html"; // Đường dẫn đến trang sửa hóa đơn
+    }
+    // Gọi hàm hiển thị danh sách khi tải trang
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('hoadonban')) {
+            init(); // Chỉ chạy khi không có dữ liệu trong LocalStorage
+        }
+        show();
     });
 </script>
+
 
 </html>

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang quản trị</title>
     <link rel="stylesheet" href="quantri.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="menu">
         <div class="logo">
@@ -44,53 +48,56 @@
                     <h2>Thêm sản phẩm</h2>
                 </div>
             </div>
-            <div >
+            <div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-4"><label>Hình ảnh sản phẩm:</label></div>
                         <div class="col-8">
-                            <input type="file" id="hinhanh" class="form-control" accept="image/*" onchange="previewImage(event)">
-                            <div style="margin-top: 10px; width: 300px;" >
-                                <img id="imagePreview" src="" alt="Hình ảnh sản phẩm" style="max-width: 100%; height: auto; display: none; border: 1px solid #ddd; padding: 5px;">
+                            <input type="file" id="hinhanh" class="form-control" accept="image/*"
+                                onchange="previewImage(event)">
+                            <div style="margin-top: 10px; width: 300px;">
+                                <img id="imagePreview" src="" alt="Hình ảnh sản phẩm"
+                                    style="max-width: 100%; height: auto; display: none; border: 1px solid #ddd; padding: 5px;">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-4"><label>Loại sản phẩm:</label></div>
                         <div class="col-8">
-                            <select  id="loaisanpham"  class="form-control" >
-                                <option >-- Chọn loại sản phẩm --</option>
-                                <option >Loại 1</option>
-                                <option >Loại 2</option>
-                                <option >Loại 3</option>
-                                <option >Loại 4</option>
-                                <option >Loại 5</option>
+                            <select id="loaisanpham" class="form-control">
+                                <option>-- Chọn loại sản phẩm --</option>
+                                <option>Loại 1</option>
+                                <option>Loại 2</option>
+                                <option>Loại 3</option>
+                                <option>Loại 4</option>
+                                <option>Loại 5</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4"><label>Tên sản phẩm:</label></div>
                         <div class="col-8">
-                            <input type="text" id="tensanpham" class="form-control" placeholder="Nhập tên sản phẩm" >
+                            <input type="text" id="tensanpham" class="form-control" placeholder="Nhập tên sản phẩm">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4"><label>Mô tả:</label></div>
                         <div class="col-8">
-                            <textarea name="mota" id="mota" class="form-control" placeholder="Nhập mô tả cho sản phẩm" rows="6" ></textarea>
+                            <textarea name="mota" id="mota" class="form-control" placeholder="Nhập mô tả cho sản phẩm"
+                                rows="6"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4"><label>Số lượng:</label></div>
                         <div class="col-8">
-                            <input type="number" id="soluong"  class="form-control" placeholder="Nhập số lượng" >
+                            <input type="number" id="soluong" class="form-control" placeholder="Nhập số lượng">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4"><label>Đơn giá:</label></div>
                         <div class="col-8">
-                            <input type="number" id="dongia" class="form-control" placeholder="Nhập đơn giá" >
+                            <input type="number" id="dongia" class="form-control" placeholder="Nhập đơn giá">
                         </div>
                     </div>
                 </div>
@@ -104,26 +111,26 @@
     <script>
         let productList = JSON.parse(localStorage.getItem('sanpham')) || [];
         function previewImage(event) {
-    const file = event.target.files[0];
-    const preview = document.getElementById('imagePreview');
-    
-    if (file) {
-        const reader = new FileReader();
-        
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            preview.style.display = 'block';
-        };
-        
-        reader.readAsDataURL(file);
-    } else {
-        preview.src = '';
-        preview.style.display = 'none';
-    }
-}
+            const file = event.target.files[0];
+            const preview = document.getElementById('imagePreview');
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
+        }
 
 
-        function add(){
+        function add() {
             let loaisanpham = document.querySelector('#loaisanpham').value;
             let tensanpham = document.querySelector('#tensanpham').value;
             let mota = document.querySelector('#mota').value;
@@ -138,7 +145,7 @@
 
             // Tạo đối tượng sản phẩm
             let product = {
-                id:generateId(),
+                id: generateId(),
                 loaisanpham: loaisanpham,
                 tensanpham: tensanpham,
                 mota: mota,
@@ -156,15 +163,16 @@
 
             // Thông báo và reset form (nếu cần)
             alert("Sản phẩm đã được thêm thành công!");
-            
-            location.href="sanpham.html";
+
+            location.href = "sanpham.html";
         }
         function generateId() {
             return '_' + Math.random().toString(36).substr(2, 9);
         }
-        function save(){
-            localStorage.setItem('sanpham',JSON.stringify(productList));
+        function save() {
+            localStorage.setItem('sanpham', JSON.stringify(productList));
         }
     </script>
 </body>
+
 </html>

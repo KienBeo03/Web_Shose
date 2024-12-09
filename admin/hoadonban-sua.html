@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sửa hóa đơn bán</title>
     <link rel="stylesheet" href="quantri.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="menu">
         <div class="logo">
@@ -48,33 +52,34 @@
                 <form id="edit-invoice-form">
                     <div class="form-group">
                         <label for="customer-name">Tên khách hàng:</label>
-                        <input type="text" id="customer-name" name="customer-name" value="Nguyễn Văn A" required>
+                        <input type="text" id="customer-name" name="customer-name" required>
                     </div>
                     <div class="form-group">
                         <label for="customer-email">Email:</label>
-                        <input type="email" id="customer-email" name="customer-email" value="nguyenvana@gmail.com" required>
+                        <input type="email" id="customer-email" name="customer-email" required>
                     </div>
                     <div class="form-group">
                         <label for="product-count">Tổng sản phẩm:</label>
-                        <input type="number" id="product-count" name="product-count" value="3" required>
+                        <input type="number" id="product-count" name="product-count" required>
                     </div>
                     <div class="form-group">
                         <label for="total-price">Tổng tiền:</label>
-                        <input type="text" id="total-price" name="total-price" value="300,000" required>
+                        <input type="text" id="total-price" name="total-price" required>
                     </div>
                     <div class="form-group">
                         <label for="status">Trạng thái:</label>
                         <select id="status" name="status" required>
                             <option value="Chưa duyệt đơn">Chưa duyệt đơn</option>
-                            <option value="Đã nhận hàng" selected>Đã nhận hàng</option>
+                            <option value="Đã nhận hàng">Đã nhận hàng</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="date-created">Ngày tạo:</label>
-                        <input type="datetime-local" id="date-created" name="date-created" value="2024-12-04T10:30" required>
+                        <input type="datetime-local" id="date-created" name="date-created" required>
                     </div>
                     <div class="form-buttons">
-                        <button type="button" class="btn btn-green" id="update-button"><i class="fa fa-save"></i> Cập nhật hóa đơn</button>
+                        <button type="button" class="btn btn-green" id="update-button"><i class="fa fa-save"></i> Cập
+                            nhật hóa đơn</button>
                         <a href="hoadonban.html" class="btn btn-red"><i class="fa fa-times"></i> Hủy</a>
                     </div>
                 </form>
@@ -83,51 +88,77 @@
     </div>
 
     <script>
+   
+
         document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("edit-invoice-form");
-    const updateButton = document.getElementById("update-button");
-    const totalPriceInput = document.getElementById("total-price");
+            const form = document.getElementById("edit-invoice-form");
+            const updateButton = document.getElementById("update-button");
+            const totalPriceInput = document.getElementById("total-price");
 
-    totalPriceInput.addEventListener("input", function () {
-        const value = totalPriceInput.value.replace(/\D/g, ""); // Loại bỏ ký tự không phải số
-        totalPriceInput.value = new Intl.NumberFormat("vi-VN").format(value);
-    });
+            // Lấy dữ liệu hóa đơn cần sửa từ localStorage
+            const invoiceId = localStorage.getItem("editInvoiceId");
+            const invoices = JSON.parse(localStorage.getItem("hoadonban")) || [];
+            const invoice = invoices.find(item => item.id === invoiceId);
 
-    updateButton.addEventListener("click", function () {
-        const customerName = document.getElementById("customer-name").value.trim();
-        const customerEmail = document.getElementById("customer-email").value.trim();
-        const productCount = document.getElementById("product-count").value.trim();
-        const totalPrice = totalPriceInput.value.trim();
-        const status = document.getElementById("status").value.trim();
-        const dateCreated = document.getElementById("date-created").value.trim();
+            if (invoice) {
+                document.getElementById("customer-name").value = invoice.khachhang;
+                document.getElementById("customer-email").value = invoice.email;
+                document.getElementById("product-count").value = invoice.tongsanpham;
+                document.getElementById("total-price").value = new Intl.NumberFormat("vi-VN").format(invoice.tongtien);
+                document.getElementById("status").value = invoice.trangthai;
+                document.getElementById("date-created").value = invoice.ngaytao;
+            }
 
-        if (!customerName || !customerEmail || !productCount || !totalPrice || !status || !dateCreated) {
-            alert("Vui lòng điền đầy đủ thông tin trước khi cập nhật.");
-            return;
-        }
+            // Định dạng số tiền khi nhập
+            totalPriceInput.addEventListener("input", function () {
+                const value = totalPriceInput.value.replace(/\D/g, "");
+                totalPriceInput.value = new Intl.NumberFormat("vi-VN").format(value);
+            });
 
-        if (!/^\d+$/.test(productCount) || parseInt(productCount) <= 0) {
-            alert("Tổng sản phẩm phải là một số hợp lệ và lớn hơn 0.");
-            return;
-        }
+            // Xử lý cập nhật hóa đơn
+            updateButton.addEventListener("click", function () {
+                const khachhang = document.getElementById("customer-name").value.trim();
+                const email = document.getElementById("customer-email").value.trim();
+                const tongsanpham = document.getElementById("product-count").value.trim();
+                const tongtien = totalPriceInput.value.trim().replace(/\D/g, "");
+                const trangthai = document.getElementById("status").value.trim();
+                const ngaytao = document.getElementById("date-created").value.trim();
 
-        // Lưu dữ liệu vào localStorage
-        const invoiceData = {
-            customerName,
-            customerEmail,
-            productCount,
-            totalPrice,
-            status,
-            dateCreated
-        };
+                if (!khachhang || !email || !tongsanpham || !tongtien || !trangthai || !ngaytao) {
+                    alert("Vui lòng điền đầy đủ thông tin trước khi cập nhật.");
+                    return;
+                }
 
-        console.log("Saving invoice data to localStorage:", invoiceData); // Thêm log kiểm tra
-        localStorage.setItem("invoiceData", JSON.stringify(invoiceData)); // Lưu vào localStorage
+                if (!/^[0-9]+$/.test(tongsanpham) || parseInt(tongsanpham) <= 0) {
+                    alert("Tổng sản phẩm phải là một số hợp lệ và lớn hơn 0.");
+                    return;
+                }
 
-        alert("Hóa đơn đã được cập nhật thành công!");
-        window.location.href = "hoadonban.html"; // Chuyển hướng
-    });
-});
+                // Cập nhật hóa đơn trong danh sách
+                const updatedInvoices = invoices.map(item => {
+                    if (item.id === invoiceId) {
+                        return {
+                            ...item,
+                            khachhang,
+                            email,
+                            tongsanpham: parseInt(tongsanpham),
+                            tongtien: parseInt(tongtien),
+                            trangthai,
+                            ngaytao
+                        };
+                    }
+                    return item;
+                });
+
+                localStorage.setItem("hoadonban", JSON.stringify(updatedInvoices));
+
+                alert("Hóa đơn đã được cập nhật thành công!");
+
+                // Chuyển hướng về trang hóa đơn bán
+                window.location.href = "hoadonban.html";
+            });
+        });
     </script>
 </body>
+
 </html>

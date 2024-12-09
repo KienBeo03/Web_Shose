@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang quản trị</title>
     <link rel="stylesheet" href="quantri.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body onload="show()">
     <div class="menu">
         <div class="logo">
@@ -35,7 +39,7 @@
                 <div class="avatar">
                     <img src="../images/avt.jpg" alt="">
                 </div>
-                
+
             </div>
         </div>
 
@@ -72,7 +76,8 @@
                         <td>20</td>
                         <td>550.000đ</td>
                         <td>
-                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -88,7 +93,8 @@
                         <td>20</td>
                         <td>500.000đ</td>
                         <td>
-                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -104,8 +110,10 @@
                         <td>30</td>
                         <td>600.000đ</td>
                         <td>
-                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
-                            <button onclick="return confirm('Bạn có chắc muốn xóa không?')" class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
+                            <button onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                                class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
@@ -120,7 +128,8 @@
                         <td>20</td>
                         <td>450.000đ</td>
                         <td>
-                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit"></i></button></a>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -136,7 +145,8 @@
                         <td>20</td>
                         <td>600.000đ</td>
                         <td>
-                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i class="fa fa-edit" ></i></button></a>
+                            <a href="sanpham-sua.html"><button class="btn btn-orange"><i
+                                        class="fa fa-edit"></i></button></a>
                             <button class="btn btn-red xoa-item"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
@@ -163,37 +173,38 @@
     //     if(confirm('Bạn có chắc muốn xóa sản phẩm này không?')){
     //         $(this).parent().parent().remove(); 
     //     }
-        
+
     // });
     function deleted(id) {
-    // Hiển thị hộp thoại xác nhận
-    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?");
+        
+        // Hiển thị hộp thoại xác nhận
+        const confirmDelete = confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?");
 
-    if (confirmDelete) {
-        // Lấy danh sách sản phẩm từ LocalStorage
-        let list = JSON.parse(localStorage.getItem('sanpham')) || [];
+        if (confirmDelete) {
+            // Lấy danh sách sản phẩm từ LocalStorage
+            let list = JSON.parse(localStorage.getItem('sanpham')) || [];
 
-        // Lọc bỏ sản phẩm có ID trùng với ID cần xóa
-        list = list.filter(item => item.id !== id);
+            // Lọc bỏ sản phẩm có ID trùng với ID cần xóa
+            list = list.filter(item => item.id !== id);
 
-        // Cập nhật danh sách sản phẩm trong LocalStorage
-        localStorage.setItem('sanpham', JSON.stringify(list));
+            // Cập nhật danh sách sản phẩm trong LocalStorage
+            localStorage.setItem('sanpham', JSON.stringify(list));
 
-        // Hiển thị lại danh sách sau khi xóa
-        show();
+            // Hiển thị lại danh sách sau khi xóa
+            show();
 
-        alert('Sản phẩm đã được xóa thành công!');
-    } else {
-        alert('Hành động xóa đã bị hủy.');
+            alert('Sản phẩm đã được xóa thành công!');
+        } else {
+            alert('Hành động xóa đã bị hủy.');
+        }
     }
-}
 
 
-    function show(){
-        let list =JSON.parse(localStorage.getItem('sanpham')) || [];
+    function show() {
+        let list = JSON.parse(localStorage.getItem('sanpham')) || [];
         let tables = document.querySelector('.table');
-        tables.innerHTML='';
-        tables.innerHTML=`<tr>
+        tables.innerHTML = '';
+        tables.innerHTML = `<tr>
                         <th>#</th>
                         <th>Hình ảnh</th>
                         <th>Tên sản phẩm</th>
@@ -203,7 +214,7 @@
                         <th>Thao tác</th>
                     </tr>`;
         list.forEach(item => {
-            let htmls= `
+            let htmls = `
                     <tr>
                         <td>1</td>
                         <td>
@@ -224,30 +235,31 @@
                             <button class="btn btn-red xoa-item" onclick="deleted('${item.id}')"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>`;
-                    tables.innerHTML+=htmls;
+            tables.innerHTML += htmls;
         });
     }
     function getid(ma) {
-    
-    let list =JSON.parse(localStorage.getItem('sanpham')) || [];
-    list.forEach(item => {
-        if(item.id==ma){
-            let listpro =[{
-                id:item.id,
-                loaisanpham:item.loaisanpham,
-                mota: item.mota,
-                soluong: item.soluong,
-                tensanpham:item.tensanpham,
-                dongia: item.dongia,
-                imgsrc:item.imgsrc,
-            }]
-            window.localStorage.setItem('getid',JSON.stringify(listpro));
-            window.location.href='sanpham-sua.html';
-            
-        }
-    });
-    
-    
-}
+
+        let list = JSON.parse(localStorage.getItem('sanpham')) || [];
+        list.forEach(item => {
+            if (item.id == ma) {
+                let listpro = [{
+                    id: item.id,
+                    loaisanpham: item.loaisanpham,
+                    mota: item.mota,
+                    soluong: item.soluong,
+                    tensanpham: item.tensanpham,
+                    dongia: item.dongia,
+                    imgsrc: item.imgsrc,
+                }]
+                window.localStorage.setItem('getid', JSON.stringify(listpro));
+                window.location.href = 'sanpham-sua.html';
+
+            }
+        });
+
+
+    }
 </script>
+
 </html>

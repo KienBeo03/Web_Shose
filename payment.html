@@ -102,8 +102,24 @@
 
                         
                 </div>
+                <div id="invoice" style="display: none;">
+                    <div id="invoiceHeader"></div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoiceBody"></tbody>
+                    </table>
+                    <p><strong>Tổng cộng: </strong><span id="invoiceTotal"></span></p>
+                </div>
+                
                 <div class="Payment">
-                    <a href="Success.html" class="btn-submit" type="submit" onclick="ThanhToan()"> Đặt Hàng </a>
+                    <a href="Success.html" class="btn-submit" type="submit" onclick="printInvoice()"> Đặt Hàng </a>
                 </div>
             </form>
         </div>
